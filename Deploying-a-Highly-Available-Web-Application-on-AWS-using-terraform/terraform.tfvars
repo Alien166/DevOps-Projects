@@ -1,0 +1,6 @@
+region = "us-east-1"
+cidr_block = "192.128.0.0/16"
+pub1-cidr_block = "192.168.3.0/24"
+pub2-cidr_block = "192.168.4.0/24"
+prvi1-cidr_block = "192.168.1.0/24"
+prvi2-cidr_block = "192.168.2.0/24"
