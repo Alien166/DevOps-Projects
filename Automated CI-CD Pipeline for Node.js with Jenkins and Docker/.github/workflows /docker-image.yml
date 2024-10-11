@@ -1,0 +1,30 @@
+name: Docker CI/CD
+
+on:
+  push:
+    # Publish `main` as Docker `latest` image.
+    branches:
+      - main
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: |
+          docker build . --file dockerfile -t toba44/react-with-jenkins
+
+      - name: Log in to Docker Hub
+        run: |
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Push Docker image
+        run: |
+          docker push toba44/react-with-jenkins
+
+      - name: Run Docker container
+        run: |
+          docker run -d -p 3000:3000  toba44/react-with-jenkins 
