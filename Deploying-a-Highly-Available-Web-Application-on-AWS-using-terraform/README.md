@@ -46,7 +46,7 @@ Deploy a highly available web application on AWS using Terraform, with an Applic
 
 ## Architecture Overview
 
-![Architecture Diagram](./architure.png)
+![Architecture Diagram](.DevOps-Projects/Deploying-a-Highly-Available-Web-Application-on-AWS-using-terraform/architure.png)
 
 
 
